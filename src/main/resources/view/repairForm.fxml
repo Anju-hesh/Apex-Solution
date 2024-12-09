@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="repairAnchorPane" prefHeight="702.0" prefWidth="911.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ijse.apexbuildingsolution.apex_building_solution.Controller.RepairFormController">
+   <children>
+      <Pane fx:id="repairPane" prefHeight="702.0" prefWidth="911.0">
+         <children>
+            <ImageView fx:id="imgRepairForm" fitHeight="702.0" fitWidth="911.0" opacity="0.84" pickOnBounds="true">
+               <image>
+                  <Image url="@../Pictures/RepairForm.jpg" />
+               </image>
+            </ImageView>
+            <Pane opacity="0.54" prefHeight="702.0" prefWidth="911.0" style="-fx-background-color: radial-gradient(focus-angle 0.0deg, focus-distance -7.3395% , center 50.0% 50.0%, radius 78.211%, #ffffff 0.0%, #00ff1ee2 100.0%);">
+               <children>
+                  <Label fx:id="lblQty1" layoutX="57.0" layoutY="584.0" text="QTY (Repairing)" visible="false">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtQtyDuplicate" layoutX="187.0" layoutY="582.0" prefHeight="25.0" prefWidth="134.0" promptText="0 , 1 , 2 , . . " visible="false">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton fx:id="btnReload" layoutX="167.0" layoutY="608.0" onAction="#reLoadOnAction" prefHeight="34.0" prefWidth="143.0" style="-fx-background-color: Black; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 1.5px; -fx-border-color: White;" text="Reload">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" focusDistance="-0.07339451291145538" radius="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                  </JFXButton>
+               </children></Pane>
+            <Pane fx:id="showingPane" layoutX="14.0" layoutY="65.0" opacity="0.85" prefHeight="224.0" prefWidth="877.0" style="-fx-background-color: #bdc3c7; -fx-background-radius: 50; -fx-border-radius: 50;" />
+            <Label fx:id="lblRepairId" layoutX="273.0" layoutY="234.0" text="Repair Id">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtRepairId" layoutX="361.0" layoutY="232.0" opacity="0.77" prefHeight="25.0" prefWidth="134.0" promptText="REP _ _ _" style="-fx-background-color: #ecf0f1;">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></JFXTextField>
+            <Label fx:id="lblMachineId" layoutX="33.0" layoutY="157.0" text="Machine Id">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtMachineId" layoutX="139.0" layoutY="155.0" prefHeight="25.0" prefWidth="134.0" promptText="MECH _ _ _">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></JFXTextField>
+            <Label fx:id="lblQty" layoutX="606.0" layoutY="234.0" text="QTY (Repairing)">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtQty" layoutX="736.0" layoutY="232.0" prefHeight="25.0" prefWidth="134.0" promptText="0 , 1 , 2 , . . ">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></JFXTextField>
+            <JFXButton fx:id="btnSearchMachine" layoutX="354.0" layoutY="148.0" onAction="#searchOnAction" prefHeight="32.0" prefWidth="224.0" style="-fx-background-color: Black; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 1.5px; -fx-border-color: White;" text="Search Machine">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.07568807339449535">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+            <TableView fx:id="tblRepair" layoutX="337.0" layoutY="342.0" onMouseClicked="#selectTableClicked" prefHeight="297.0" prefWidth="542.0">
+              <columns>
+                <TableColumn fx:id="clmMachineId" prefWidth="169.5999755859375" text="Machine Id" />
+                <TableColumn fx:id="clmRepairId" prefWidth="189.5999755859375" text="Repair Id" />
+                  <TableColumn fx:id="clmQty" prefWidth="184.0" text="Qty (Reparing Machines)" />
+              </columns>
+            </TableView>
+            <JFXButton fx:id="btnSaveMachine1" layoutX="33.0" layoutY="351.0" onAction="#saveOnAction" prefHeight="32.0" prefWidth="224.0" style="-fx-background-color: Black; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 1.5px; -fx-border-color: White;" text="Save Machine">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.03899082568807346">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+            <JFXButton fx:id="btnUpdateMachine11" layoutX="33.0" layoutY="413.0" onAction="#updateOnAction" prefHeight="32.0" prefWidth="224.0" style="-fx-background-color: Black; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 1.5px; -fx-border-color: White;" text="Update Machine">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.09403669724770629">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+            <JFXButton fx:id="btnDeleteMachine111" layoutX="33.0" layoutY="482.0" onAction="#deleteOnAction" prefHeight="32.0" prefWidth="224.0" style="-fx-background-color: Black; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 1.5px; -fx-border-color: White;" text="Delete Machine">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" focusDistance="-0.07339451291145538" radius="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Label fx:id="lblRepairForm" alignment="CENTER" layoutX="13.0" layoutY="6.0" prefHeight="38.0" prefWidth="884.0" style="-fx-background-color: White; -fx-border-color: Blue;" text="Repair Form" textFill="#33ff00">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

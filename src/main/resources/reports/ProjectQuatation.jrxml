@@ -1,0 +1,85 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="ProjectQuatation" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ee055034-5cdb-49b4-a013-bd3e61d3c87e">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (2)"/>
+	<parameter name="today" class="java.lang.String"/>
+	<parameter name="todayDate" class="java.lang.String"/>
+	<parameter name="project_Id_Para" class="java.lang.String"/>
+	<query language="SQL"><![CDATA[select * from projectmaterialdetails]]></query>
+	<field name="ProjectID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ProjectID"/>
+		<property name="com.jaspersoft.studio.field.label" value="ProjectID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="projectmaterialdetails"/>
+	</field>
+	<field name="MaterialID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MaterialID"/>
+		<property name="com.jaspersoft.studio.field.label" value="MaterialID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="projectmaterialdetails"/>
+	</field>
+	<field name="Qty" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="Qty"/>
+		<property name="com.jaspersoft.studio.field.label" value="Qty"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="projectmaterialdetails"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="80" splitType="Stretch">
+		<element kind="staticText" uuid="996ffacd-d614-4692-a60c-3c4c299df87c" x="271" y="41" width="100" height="30">
+			<text><![CDATA[Material Qutation]]></text>
+		</element>
+		<element kind="textField" uuid="01d0d676-e637-4aab-bbaf-7a35580d2f14" x="470" y="0" width="100" height="30">
+			<expression><![CDATA[$P{todayDate}]]></expression>
+		</element>
+	</title>
+	<pageHeader height="35" splitType="Stretch"/>
+	<columnHeader height="61" splitType="Stretch">
+		<element kind="staticText" uuid="1db23b2b-44ab-499a-8f84-3ee26399032d" x="0" y="0" width="185" height="30">
+			<text><![CDATA[ProjectID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="17cba82f-79d9-4132-b545-1f6dfa855828"/>
+			<box>
+				<pen lineWidth="1.0" lineStyle="Solid"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="ea39c214-e67e-4314-b89b-d792c4109105" x="185" y="0" width="185" height="30">
+			<text><![CDATA[MaterialID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="17178f0e-9a8e-4b70-a3fb-455f550cb835"/>
+			<box>
+				<pen lineWidth="1.0" lineStyle="Solid"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="b40cafbf-1f6a-4222-9723-41342538d805" x="370" y="0" width="185" height="30">
+			<text><![CDATA[Qty]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="edbc4570-669f-4956-94f3-0602a484a675"/>
+			<box>
+				<pen lineWidth="1.0" lineStyle="Solid"/>
+			</box>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<element kind="textField" uuid="6dda4e92-219e-4e7b-8804-4a9affd7353e" x="0" y="0" width="185" height="30">
+				<expression><![CDATA[$F{ProjectID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="17cba82f-79d9-4132-b545-1f6dfa855828"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="a3ee9091-1db8-4682-af1e-8bc60621644f" x="185" y="0" width="185" height="30">
+				<expression><![CDATA[$F{MaterialID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="17178f0e-9a8e-4b70-a3fb-455f550cb835"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="0f7f1b6e-a685-4c8a-b8c1-52aca2f606f5" x="370" y="0" width="185" height="30">
+				<expression><![CDATA[$F{Qty}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="edbc4570-669f-4956-94f3-0602a484a675"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="69" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="paymentAnchorPane" prefHeight="702.0" prefWidth="911.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ijse.apexbuildingsolution.apex_building_solution.Controller.PaymentFormController">
+   <children>
+      <Pane fx:id="paymentPane" prefHeight="702.0" prefWidth="911.0">
+         <children>
+            <Pane prefHeight="702.0" prefWidth="911.0" style="-fx-background-color: radial-gradient(focus-angle 0.0deg, focus-distance 0.0% , center 50.0% 50.0%, radius 67.2018%, #000000 0.0%, #ffffff 100.0%);" />
+            <ImageView fx:id="imgPaymentForm" fitHeight="702.0" fitWidth="911.0" opacity="0.82" pickOnBounds="true">
+               <image>
+                  <Image url="@../Pictures/PaymentForm.jpg" />
+               </image>
+            </ImageView>
+            <TableView fx:id="tblPayment" layoutX="277.0" layoutY="100.0" onMouseClicked="#selectTableClicked" prefHeight="200.0" prefWidth="622.0">
+              <columns>
+                <TableColumn fx:id="clmPaymentId" prefWidth="84.0" text="Payment Id" />
+                  <TableColumn fx:id="clmPaymentMethod" prefWidth="132.79998779296875" text="Payment Method" />
+                  <TableColumn fx:id="clmFullBalance" prefWidth="116.0" text="Full Balance" />
+                  <TableColumn fx:id="clmPayedBalance" prefWidth="108.0" text="Payed Balance" />
+                  <TableColumn fx:id="clmStatus" prefWidth="89.5999755859375" text="Status" />
+                  <TableColumn fx:id="clmProjectId" prefWidth="90.800048828125" text="Project ID" />
+              </columns>
+            </TableView>
+            <Pane fx:id="showingPane" layoutX="372.0" layoutY="402.0" opacity="0.44" prefHeight="276.0" prefWidth="529.0" style="-fx-background-color: #5F22C3; -fx-background-radius: 50; -fx-border-radius: 50;" />
+            <JFXButton fx:id="btnSearch" layoutX="710.0" layoutY="636.0" onAction="#searchOnAction" prefHeight="31.0" prefWidth="182.0" style="-fx-background-color: Black; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 1.5; -fx-border-color: White;" text="Search Payments">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.0573394495412844">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+            <JFXButton fx:id="btnDelete" layoutX="348.0" layoutY="325.0" onAction="#deleteOnAction" prefHeight="31.0" prefWidth="182.0" style="-fx-background-color: Black; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 1.5; -fx-border-color: White;" text="Delete Payments">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.0665137614678897">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+            <JFXButton fx:id="btnUpdate" layoutX="644.0" layoutY="325.0" onAction="#updateOnAction" prefHeight="31.0" prefWidth="182.0" style="-fx-background-color: Black; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 1.5; -fx-border-color: White;" text="Update Payments">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.029816513761467822">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+            <Label fx:id="lblFullBalance" layoutX="456.0" layoutY="513.0" prefHeight="17.0" prefWidth="118.0" text="Full Balance">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtFullBalance" layoutX="610.0" layoutY="511.0" prefHeight="25.0" prefWidth="191.0" promptText="Full Balance">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </JFXTextField>
+            <Label fx:id="lblPaymentId" layoutX="456.0" layoutY="435.0" prefHeight="17.0" prefWidth="118.0" text="Payment Id">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPaymentMethod" layoutX="456.0" layoutY="475.0" prefHeight="21.0" prefWidth="136.0" text="Payment Method">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtPaymentMethod" layoutX="610.0" layoutY="473.0" prefHeight="25.0" prefWidth="280.0" promptText="Card , Cash ,...." unFocusColor="#4b4747">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </JFXTextField>
+            <Label fx:id="lblPayedBalance" layoutX="456.0" layoutY="546.0" prefHeight="17.0" prefWidth="118.0" text="Payed Balance">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtPayedBalance" layoutX="610.0" layoutY="544.0" prefHeight="25.0" prefWidth="191.0" promptText="Payed Balance">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </JFXTextField>
+            <Label fx:id="lblStatus" layoutX="456.0" layoutY="592.0" prefHeight="17.0" prefWidth="118.0" text="Status">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtStatus" layoutX="610.0" layoutY="590.0" prefHeight="30.0" prefWidth="163.0" promptText="status">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </JFXTextField>
+            <Label fx:id="lblProjectId" layoutX="381.0" layoutY="632.0" prefHeight="17.0" prefWidth="118.0" text="Project Id" textFill="#2f00ff">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtProjectId" focusColor="#4116b7" layoutX="516.0" layoutY="630.0" prefHeight="30.0" prefWidth="182.0" promptText="PROJ_ _ _" unFocusColor="#463a41">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="btnReload" layoutX="277.0" layoutY="60.0" onAction="#reloadOnAction" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: White;" text="Reload table">
+               <font>
+                  <Font name="Bodoni MT Condensed Bold" size="15.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="lblPaymentIdShow" layoutX="610.0" layoutY="434.0" prefHeight="30.0" prefWidth="148.0">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label fx:id="lblPaymentForm" alignment="CENTER" layoutX="6.0" layoutY="7.0" prefHeight="38.0" prefWidth="894.0" style="-fx-background-color: White; -fx-border-color: Blue;" text="Payment Form" textFill="#00e108">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

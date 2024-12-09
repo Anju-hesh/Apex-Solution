@@ -1,0 +1,249 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="ProjectReport" language="java" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8ec92868-45d8-4171-83ce-7bd451b92c88">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ApexBuilding_SolutionDBConnection"/>
+	<parameter name="todayDate" class="java.lang.String"/>
+	<parameter name="p_project_Id" class="java.lang.String"/>
+	<parameter name="timeNow" class="java.lang.String"/>
+	<query language="SQL"><![CDATA[SELECT
+    c.CustomerId,
+    c.Name ,
+
+    p.ProjectID,
+    p.Name,
+
+    m.Name,
+
+    mt.Name,
+    mt.ModelNo,
+
+    pay.PaymentID,
+    pay.Method ,
+    pay.FullBalance,
+    pay.PayedBalance,
+    pay.Status
+
+FROM
+    Customer c
+        JOIN Project p ON c.CustomerId = p.CustomerID
+        JOIN UserAccount ua ON p.UserID = ua.UserID
+        JOIN Employee e ON ua.EmployeeID = e.EmployeeID
+        JOIN Payment pay ON p.ProjectID = pay.ProjectId
+        JOIN ProjectMachineDetails pmd ON p.ProjectID = pmd.ProjectID
+        JOIN Machine m ON pmd.MachineID = m.MachineID
+        JOIN Repair r ON m.MachineID = r.MachineID
+        JOIN ProjectMaterialDetails pmt ON p.ProjectID = pmt.ProjectID
+        JOIN Material mt ON pmt.MaterialID = mt.MaterialID
+        JOIN Supplier s ON mt.SupplierID = s.SupplierID
+
+WHERE p.ProjectID = $P{p_project_Id}]]></query>
+	<field name="CustomerId" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CustomerId"/>
+		<property name="com.jaspersoft.studio.field.label" value="CustomerId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="ProjectID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ProjectID"/>
+		<property name="com.jaspersoft.studio.field.label" value="ProjectID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="project"/>
+	</field>
+	<field name="COLUMN_4" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="project"/>
+	</field>
+	<field name="COLUMN_5" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="machine"/>
+	</field>
+	<field name="COLUMN_6" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="material"/>
+	</field>
+	<field name="ModelNo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ModelNo"/>
+		<property name="com.jaspersoft.studio.field.label" value="ModelNo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="material"/>
+	</field>
+	<field name="PaymentID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PaymentID"/>
+		<property name="com.jaspersoft.studio.field.label" value="PaymentID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
+	</field>
+	<field name="Method" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Method"/>
+		<property name="com.jaspersoft.studio.field.label" value="Method"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
+	</field>
+	<field name="FullBalance" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="FullBalance"/>
+		<property name="com.jaspersoft.studio.field.label" value="FullBalance"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
+	</field>
+	<field name="PayedBalance" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="PayedBalance"/>
+		<property name="com.jaspersoft.studio.field.label" value="PayedBalance"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
+	</field>
+	<field name="Status" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Status"/>
+		<property name="com.jaspersoft.studio.field.label" value="Status"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payment"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="78" splitType="Stretch">
+		<element kind="staticText" uuid="6c484988-ea16-44fb-9384-0860f75124e7" x="-20" y="10" width="842" height="60" fontSize="24.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Full Project Report]]></text>
+		</element>
+		<element kind="textField" uuid="0db5eb11-76df-4c07-a113-95bdb1bcb757" x="580" y="20" width="220" height="30" fontSize="12.0" italic="true" underline="false" hTextAlign="Center" vTextAlign="Middle">
+			<expression><![CDATA[$P{todayDate}]]></expression>
+		</element>
+		<element kind="textField" uuid="2141e8fc-97f7-44af-81d6-11e45dfc1255" x="-12" y="30" width="141" height="30" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle">
+			<expression><![CDATA[$P{timeNow}]]></expression>
+		</element>
+	</title>
+	<pageHeader height="177" splitType="Stretch">
+		<element kind="staticText" uuid="bda2b087-caf3-44d2-824e-f1f998716eac" x="0" y="10" width="80" height="30" hTextAlign="Left" vTextAlign="Middle">
+			<text><![CDATA[Name : ]]></text>
+		</element>
+		<element kind="staticText" uuid="c1e3f946-f595-4faa-8029-f83507a21b3d" x="0" y="50" width="80" height="30" hTextAlign="Left" vTextAlign="Middle">
+			<text><![CDATA[Customer Id : ]]></text>
+		</element>
+		<element kind="staticText" uuid="fd3ae7f6-bd81-4f2d-8ea0-498af526fdd2" x="580" y="10" width="80" height="30" hTextAlign="Left" vTextAlign="Middle">
+			<text><![CDATA[Project Id : ]]></text>
+		</element>
+		<element kind="staticText" uuid="00509556-cd28-45fe-ba05-65dad925f6e3" x="580" y="50" width="80" height="30" hTextAlign="Left" vTextAlign="Middle">
+			<text><![CDATA[Project Name : ]]></text>
+		</element>
+		<element kind="textField" uuid="e7978f05-0d55-4687-bb94-deab69833215" x="100" y="50" width="160" height="30" fontSize="16.0" bold="true" vTextAlign="Middle">
+			<expression><![CDATA[$F{CustomerId}]]></expression>
+		</element>
+		<element kind="textField" uuid="916367f0-4b7b-46cf-a74c-840f0836a77f" x="680" y="10" width="130" height="30" fontSize="16.0" bold="true" vTextAlign="Middle">
+			<expression><![CDATA[$F{ProjectID}]]></expression>
+		</element>
+		<element kind="staticText" uuid="fecfac17-9ad9-4f8a-8ee7-39d0e93d4d97" x="80" y="90" width="110" height="30" hTextAlign="Left" vTextAlign="Middle">
+			<text><![CDATA[Payment Id]]></text>
+			<box>
+				<pen lineWidth="1.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="e037fa51-c63a-48ee-8c78-d6b295e7873c" x="190" y="90" width="110" height="30" hTextAlign="Left" vTextAlign="Middle">
+			<text><![CDATA[Payment Method]]></text>
+			<box>
+				<pen lineWidth="1.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="c4b20637-e947-40c5-9cb7-7e528aa34476" x="300" y="90" width="110" height="30" hTextAlign="Left" vTextAlign="Middle">
+			<text><![CDATA[Full Balance]]></text>
+			<box>
+				<pen lineWidth="1.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="d5b8c2b8-22ab-4aa7-8db2-18c58f8848e5" x="410" y="90" width="110" height="30" hTextAlign="Left" vTextAlign="Middle">
+			<text><![CDATA[Payed Balance]]></text>
+			<box>
+				<pen lineWidth="1.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="f6edd916-df5c-4620-b4fd-4aa0a5b42e84" x="520" y="90" width="140" height="30" hTextAlign="Left" vTextAlign="Middle">
+			<text><![CDATA[Payment Status]]></text>
+			<box>
+				<pen lineWidth="1.25"/>
+			</box>
+		</element>
+		<element kind="textField" uuid="a66d78f2-02d1-4265-ada8-ec5edeb00003" x="80" y="120" width="110" height="30" fontSize="14.0" bold="true" vTextAlign="Middle">
+			<expression><![CDATA[$F{PaymentID}]]></expression>
+			<box>
+				<pen lineWidth="0.75"/>
+			</box>
+		</element>
+		<element kind="textField" uuid="5d6ca99e-478d-472a-9e0b-14979675e251" x="100" y="10" width="100" height="30" fontSize="16.0" bold="true" vTextAlign="Middle">
+			<expression><![CDATA[$F{Name}]]></expression>
+		</element>
+		<element kind="textField" uuid="420c654f-3c8b-4040-856d-f918cc1883ff" x="680" y="50" width="100" height="30" fontSize="14.0" bold="true" vTextAlign="Middle">
+			<expression><![CDATA[$F{COLUMN_4}]]></expression>
+		</element>
+		<element kind="textField" uuid="5dbe83ac-7753-4d0c-8e96-c88ade1d1db5" x="190" y="120" width="110" height="30" fontSize="14.0" bold="true" vTextAlign="Middle">
+			<expression><![CDATA[$F{Method}]]></expression>
+			<box>
+				<pen lineWidth="0.75"/>
+			</box>
+		</element>
+		<element kind="textField" uuid="3987a216-eef9-49fa-8d58-0ce3c156fb87" x="300" y="120" width="110" height="30" fontSize="14.0" bold="true" vTextAlign="Middle">
+			<expression><![CDATA[$F{FullBalance}]]></expression>
+			<box>
+				<pen lineWidth="0.75"/>
+			</box>
+		</element>
+		<element kind="textField" uuid="fdb1d284-1913-46f5-9bcf-4ad13abaf1f2" x="410" y="120" width="110" height="30" fontSize="14.0" bold="true" vTextAlign="Middle">
+			<expression><![CDATA[$F{PayedBalance}]]></expression>
+			<box>
+				<pen lineWidth="0.75"/>
+			</box>
+		</element>
+		<element kind="textField" uuid="51140857-3202-4e32-a0d7-5975f39f66f1" x="520" y="120" width="140" height="30" fontSize="14.0" bold="true" vTextAlign="Middle">
+			<expression><![CDATA[$F{Status}]]></expression>
+			<box>
+				<pen lineWidth="0.75"/>
+			</box>
+		</element>
+	</pageHeader>
+	<columnHeader height="124" splitType="Stretch">
+		<element kind="staticText" uuid="036996cb-9d34-4dc3-a992-d9233caa9d73" x="1" y="84" width="248" height="40" fontSize="14.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Machine Name]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9dc36fee-32a2-4a9f-b051-83443c9d849a"/>
+			<box>
+				<pen lineWidth="1.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="893b5c61-a123-4922-9803-a32005b54fe8" x="269" y="84" width="267" height="40" fontSize="14.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Material Name]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5bee6d03-6bdd-4415-8c5f-16978353c301"/>
+			<box>
+				<pen lineWidth="1.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="068b5ee5-f494-4978-90ea-d4a48c34b497" x="536" y="84" width="267" height="40" fontSize="14.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[ModelNo]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d4662930-cf7d-4789-b992-edf9c6c49740"/>
+			<box>
+				<pen lineWidth="1.25"/>
+			</box>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="62" splitType="Stretch">
+			<element kind="textField" uuid="9fcff27d-0674-495d-9d7a-2a479d1a002b" x="0" y="0" width="248" height="30" fontSize="12.0" italic="true" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{COLUMN_5}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9dc36fee-32a2-4a9f-b051-83443c9d849a"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="7651eecc-e4d5-464a-a5a4-a7813c6e5c76" x="269" y="0" width="266" height="30" fontSize="12.0" italic="true" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{COLUMN_6}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5bee6d03-6bdd-4415-8c5f-16978353c301"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="1ce9ddda-7be5-4264-ba63-1d4202a47bd6" x="535" y="0" width="268" height="30" fontSize="12.0" italic="true" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{ModelNo}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d4662930-cf7d-4789-b992-edf9c6c49740"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>

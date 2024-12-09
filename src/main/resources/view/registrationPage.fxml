@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainAnchorRegistration" prefHeight="844.0" prefWidth="1518.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ijse.apexbuildingsolution.apex_building_solution.Controller.RegistrationPageController">
+   <children>
+      <ImageView fx:id="imgRegistrationRightPane" fitHeight="854.0" fitWidth="1534.0" opacity="0.77" pickOnBounds="true">
+         <image>
+            <Image url="@../Pictures/RegistrationPageRightPane.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgRegistrationpane" fitHeight="859.0" fitWidth="1537.0" layoutX="-1.0" layoutY="-5.0" opacity="0.35" pickOnBounds="true">
+         <image>
+            <Image url="@../Pictures/LoginLeftAnchor.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutY="-1.0" opacity="0.47" prefHeight="854.0" prefWidth="1534.0" style="-fx-background-color: radial-gradient(focus-angle 0.0deg, focus-distance 0.0% , center 50.0% 50.0%, radius 73.6239%, #ffffff 0.0%, #00ff44f1 100.0%);" />
+      <Circle fx:id="circleLogo" fill="#7e868e" layoutX="110.0" layoutY="107.0" opacity="0.97" radius="92.0" stroke="BLACK" strokeType="INSIDE" />
+      <ImageView fx:id="imgregistrationLogoPane" fitHeight="150.0" fitWidth="200.0" layoutX="35.0" layoutY="32.0" opacity="0.83" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/LogoWelcome Constructions.jpg" />
+         </image>
+      </ImageView>
+      <Pane fx:id="pane" layoutX="43.0" layoutY="223.0" opacity="0.78" prefHeight="594.0" prefWidth="974.0" style="-fx-background-color: #7f8c8d; -fx-background-radius: 50; -fx-border-radius: 50;">
+         <children>
+            <Label fx:id="lblUserIdRegistration" layoutX="27.0" layoutY="16.0" prefHeight="30.0" prefWidth="108.0" text="User Id">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imgUserIdPane" fitHeight="34.0" fitWidth="38.0" layoutX="256.0" layoutY="12.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../icons/Id.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblFullNameRegistration" layoutX="27.0" layoutY="89.0" prefHeight="30.0" prefWidth="108.0" text="Full Name">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imgFullNamePane" fitHeight="34.0" fitWidth="38.0" layoutX="256.0" layoutY="85.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../icons/FullName.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblUserNameRegistration" layoutX="27.0" layoutY="170.0" prefHeight="30.0" prefWidth="108.0" text="User Name">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imgUserNamePane" fitHeight="34.0" fitWidth="38.0" layoutX="256.0" layoutY="166.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../icons/userName.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="txtUserNameRegistration" layoutX="327.0" layoutY="168.0" prefHeight="34.0" prefWidth="416.0" promptText="User Name" style="-fx-border-color: #8e44ad; -fx-border-width: 0px 0px 3px 0px; -fx-background-color: tansparant;">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </TextField>
+            <Label fx:id="lblPasswordRegistration" layoutX="27.0" layoutY="245.0" prefHeight="30.0" prefWidth="108.0" text="Password">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="txtPasswordRegistration" layoutX="327.0" layoutY="243.0" opacity="0.7" prefHeight="34.0" prefWidth="359.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #8e44ad; -fx-border-width: 0px 0px 3px 0px;">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font></PasswordField>
+            <TextField fx:id="txtPasswordShowFieldRegistration" layoutX="327.0" layoutY="245.0" opacity="0.81" prefHeight="30.0" prefWidth="359.0" style="-fx-background-color: White;" visible="false">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font></TextField>
+            <ImageView fx:id="imgPasswordEye" fitHeight="18.0" fitWidth="21.0" layoutX="693.0" layoutY="263.0" onMousePressed="#showPasswordPressed" onMouseReleased="#hidePasswordReleased" pickOnBounds="true">
+               <image>
+                  <Image url="@../icons/closeEyePassword.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgPasswordPane" fitHeight="34.0" fitWidth="38.0" layoutX="256.0" layoutY="240.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../icons/Password.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblPasswordRegistrationConfirm" layoutX="27.0" layoutY="302.0" prefHeight="30.0" prefWidth="184.0" text="Confirm Password">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="txtPasswordRegistrationConfirm" layoutX="327.0" layoutY="298.0" opacity="0.7" prefHeight="34.0" prefWidth="359.0" promptText="Confirm Password" style="-fx-background-color: transparent; -fx-border-color: #8e44ad; -fx-border-width: 0px 0px 3px 0px;">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font></PasswordField>
+            <TextField fx:id="txtPasswordShowFieldRegistrationConfirm" layoutX="327.0" layoutY="300.0" opacity="0.81" prefHeight="30.0" prefWidth="359.0" style="-fx-background-color: White;" visible="false">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font></TextField>
+            <ImageView fx:id="imgPasswordEyeConfirm" fitHeight="18.0" fitWidth="21.0" layoutX="693.0" layoutY="321.0" onMousePressed="#showPasswordPressedConfirm" onMouseReleased="#hidePasswordReleasedConfirm" pickOnBounds="true">
+               <image>
+                  <Image url="@../icons/closeEyePassword.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgPasswordPaneConfirm" fitHeight="34.0" fitWidth="38.0" layoutX="256.0" layoutY="298.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../icons/Password.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="txtEmployeeIdRegistration" layoutX="325.0" layoutY="362.0" prefHeight="34.0" prefWidth="296.0" promptText="E_ _ _" style="-fx-border-color: #8e44ad; -fx-border-width: 0px 0px 3px 0px; -fx-background-color: tansparant;">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </TextField>
+            <ImageView fx:id="imgEmployeeIdPane" fitHeight="34.0" fitWidth="38.0" layoutX="256.0" layoutY="362.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../icons/Id.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="txtGmailRegistration" layoutX="325.0" layoutY="427.0" prefHeight="34.0" prefWidth="624.0" promptText="--------------------@gmail.com" style="-fx-border-color: #8e44ad; -fx-border-width: 0px 0px 3px 0px; -fx-background-color: tansparant;">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </TextField>
+            <ImageView fx:id="imgEmailPane" fitHeight="34.0" fitWidth="38.0" layoutX="256.0" layoutY="427.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../icons/Email.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="btnRegister" layoutX="657.0" layoutY="503.0" onAction="#btnopenLoginPageRegistered" prefHeight="43.0" prefWidth="184.0" style="-fx-background-color: Black; -fx-background-radius: 15; -fx-border-radius: 15; -fx-cursor: hand; -fx-border-width: 1.5px; -fx-border-color: White;" text="Register">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+            <Hyperlink fx:id="hyperSignInRegistration" layoutX="834.0" layoutY="557.0" onMouseClicked="#lblopenLoginPage" style="-fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0984e3;" text="Sign In">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.2234848123608213" endY="0.5643939258474292">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.09263157844543457" blue="0.9263157844543457" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Hyperlink>
+            <Label fx:id="lblUserIdShow" layoutX="327.0" layoutY="23.0" opacity="0.72" prefHeight="26.0" prefWidth="276.0" style="-fx-border-color: #9b59b6; -fx-border-width: 0px 0px 3px 0px; -fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: White;" textFill="#4242b4">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font></Label>
+            <Label fx:id="lblCheckPassword" alignment="CENTER" layoutX="755.0" layoutY="315.0" prefHeight="31.0" prefWidth="184.0" textFill="#e71111">
+               <font>
+                  <Font name="Algerian" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFullNameRegistration" layoutX="325.0" layoutY="83.0" prefHeight="34.0" prefWidth="296.0" promptText="Full Name" style="-fx-border-color: #8e44ad; -fx-border-width: 0px 0px 3px 0px; -fx-background-color: tranparent;">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+         </children>
+      </Pane>
+      <Label fx:id="lblRegistrationForm" layoutX="241.0" layoutY="66.0" prefHeight="30.0" prefWidth="248.0" style="-fx-border-color: #2980b9; -fx-border-width: 0px 2px 0px 2px;" text="   Registration Form" textFill="#107149">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblIntro" layoutX="241.0" layoutY="99.0" text="Fill The Form For Register" textFill="#913c3c">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblEmployeeIdRegistration" layoutX="68.0" layoutY="587.0" prefHeight="30.0" prefWidth="150.0" text="Employee Id">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblGmailRegistration" layoutX="68.0" layoutY="654.0" prefHeight="30.0" prefWidth="150.0" text="E - Mail" textFill="#0d0c0c">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblAlready" layoutX="657.0" layoutY="781.0" text="Already Have an Account . ?" textFill="#dfd8d8">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

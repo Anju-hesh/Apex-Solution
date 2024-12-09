@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="dashboardMainAnchorPane" prefHeight="844.0" prefWidth="1518.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ijse.apexbuildingsolution.apex_building_solution.Controller.DashboardPageController">
+   <children>
+      <VBox fx:id="mainVBox" alignment="TOP_CENTER" opacity="0.8" prefHeight="844.0" prefWidth="419.0" spacing="10.0" style="-fx-background-color: F6F7C4;">
+         <children>
+            <HBox fx:id="hBox" prefHeight="100.0" prefWidth="200.0" spacing="10.0" translateX="10.0" translateY="10.0">
+               <children>
+                  <ImageView fx:id="imgLogoVBox" fitHeight="64.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pictures/WhatsApp Image .jpg" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="70.0" prefWidth="346.0" text="Apex Building Solutions">
+                     <font>
+                        <Font name="Bell MT Bold" size="27.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <TextField fx:id="txtSearch" onAction="#searchOnAction" prefHeight="33.0" prefWidth="515.0" promptText="Search" style="-fx-background-color: Transparent; -fx-border-color: White; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font name="Bodoni MT Bold" size="15.0" />
+               </font>
+            </TextField>
+            <JFXButton fx:id="btnUser" alignment="CENTER" onAction="#userOnAction" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: Black; -fx-background-radius: 12; -fx-border-radius: 12; -fx-cursor: hand; -fx-border-color: White; -fx-border-width: 1.5px;" text="User" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnCustomer" alignment="CENTER" onAction="#customerOnAction" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: Black; -fx-background-radius: 12; -fx-border-radius: 12; -fx-cursor: hand; -fx-border-color: White; -fx-border-width: 1.5px;" text="Customer" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnEmployee" alignment="CENTER" onAction="#employeeOnAction" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: Black; -fx-background-radius: 12; -fx-border-radius: 12; -fx-cursor: hand; -fx-border-color: White; -fx-border-width: 1.5px;" text="Employee" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnPayment" alignment="CENTER" onAction="#paymentOnAction" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: Black; -fx-background-radius: 12; -fx-border-radius: 12; -fx-cursor: hand; -fx-border-color: White; -fx-border-width: 1.5px;" text="Payment" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnSupplier" alignment="CENTER" onAction="#supplierOnAction" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: Black; -fx-background-radius: 12; -fx-border-radius: 12; -fx-cursor: hand; -fx-border-color: White; -fx-border-width: 1.5px;" text="Supplier" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnRepair" alignment="CENTER" onAction="#repairOnAction" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: Black; -fx-background-radius: 12; -fx-border-radius: 12; -fx-cursor: hand; -fx-border-color: White; -fx-border-width: 1.5px;" text="Repair" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnProject" onAction="#projectOnAction" prefHeight="40.0" prefWidth="186.0" style="-fx-background-color: linear-gradient(from 0.0% 17.0455% to 59.4697% 81.8182%, #05f266 0.0%, #05f266 0.6729%, #ccf404 100.0%); -fx-border-color: Black; -fx-border-width: 1.5px; -fx-background-radius: 10; -fx-border-radius: 10; -fx-cursor: hand;" text="Project" textFill="#1212c7">
+               <font>
+                  <Font name="System Bold Italic" size="22.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btnMachine" alignment="CENTER" onAction="#machineOnAction" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: Black; -fx-background-radius: 12; -fx-border-radius: 12; -fx-cursor: hand; -fx-border-color: White; -fx-border-width: 1.5px;" text="Machine" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnMachineRepair" alignment="CENTER" onAction="#machineProjectOnAction" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: Black; -fx-background-radius: 12; -fx-border-radius: 12; -fx-cursor: hand; -fx-border-color: White; -fx-border-width: 1.5px;" text="Machine &amp; Project" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnMaterials" alignment="CENTER" onAction="#materialsOnAction" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: Black; -fx-background-radius: 12; -fx-border-radius: 12; -fx-cursor: hand; -fx-border-color: White; -fx-border-width: 1.5px;" text="Materials" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnProjectMaterials" alignment="CENTER" onAction="#projectMaterialsOnAction" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: Black; -fx-background-radius: 12; -fx-border-radius: 12; -fx-cursor: hand; -fx-border-color: White; -fx-border-width: 1.5px;" text="Project &amp; Materials" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <HBox fx:id="hboxUnder" prefHeight="70.0" prefWidth="419.0" translateX="10.0" translateY="10.0" translateZ="20.0">
+               <children>
+                  <ImageView fx:id="imgViewBack" fitHeight="42.0" fitWidth="76.0" onMouseClicked="#backToLoginClickOnAction" pickOnBounds="true" preserveRatio="true" y="1.0">
+                     <image>
+                        <Image url="@../Pictures/fogetPasswordBack.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton fx:id="btnBackToLogin" onAction="#backToLoginOnAction" prefHeight="36.0" prefWidth="317.0" style="-fx-background-radius: 07; -fx-border-radius: 12; -fx-background-color: #ecf0f1; -fx-cursor: hand; -fx-border-color: linear-gradient(from 0.0% 17.0455% to 59.4697% 81.8182%, #05f266 0.0%, #05f266 0.6729%, #ccf404 100.0%); -fx-border-width: 1.5px;" text="Go To The Login Page" translateX="20.0">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.40825688073394495">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.01899999938905239" green="0.949999988079071" blue="0.40061548352241516" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.006729475100942127">
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Pane fx:id="loadPane" layoutX="417.0" prefHeight="842.0" prefWidth="1100.0">
+         <children>
+            <ImageView fx:id="imgDashboardRightPane" fitHeight="842.0" fitWidth="1100.0" opacity="0.56" pickOnBounds="true">
+               <image>
+                  <Image url="@../Pictures/DashboardRightPane.jpg" />
+               </image>
+            </ImageView>
+            <Pane fx:id="colorPane" opacity="0.86" prefHeight="842.0" prefWidth="1100.0" style="-fx-background-color: white;">
+               <children>
+                  <ImageView fx:id="imgViewDiagram" fitHeight="842.0" fitWidth="1100.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../Pictures/dashboardDiagram.png" />
+                     </image>
+                  </ImageView>
+                  <Pane fx:id="landingPane" layoutX="106.0" layoutY="104.0" opacity="0.78" prefHeight="702.0" prefWidth="911.0" />
+                  <JFXButton fx:id="btnBackToDashBoard" layoutX="59.0" layoutY="14.0" onAction="#backToDashBoardOnAction" prefHeight="38.0" prefWidth="230.0" style="-fx-background-color: Black; -fx-border-color: Blue; -fx-border-width: 2px;" text="Back To DashBoard" textFill="WHITE">
+                     <font>
+                        <Font name="Bodoni MT" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <Label fx:id="lblDate" layoutX="921.0" layoutY="4.0" prefHeight="34.0" prefWidth="173.0">
+                     <font>
+                        <Font name="Bell MT Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+         </children></Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="machineProjectAnchorPane" prefHeight="702.0" prefWidth="911.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ijse.apexbuildingsolution.apex_building_solution.Controller.MachineProjectController">
+   <children>
+      <Pane fx:id="machineProjectPane" prefHeight="702.0" prefWidth="911.0">
+         <children>
+            <ImageView fx:id="imgMachineProjectForm" fitHeight="702.0" fitWidth="911.0" opacity="0.51" pickOnBounds="true">
+               <image>
+                  <Image url="@../Pictures/MachineProjectForm.jpg" />
+               </image>
+            </ImageView>
+            <Pane layoutX="-1.0" layoutY="-3.0" opacity="0.67" prefHeight="702.0" prefWidth="911.0" style="-fx-background-color: radial-gradient(focus-angle 0.0deg, focus-distance 0.0% , center 50.0% 50.0%, radius 73.6239%, #000000 0.0%, #ffffff 100.0%);">
+               <children>
+                  <JFXButton fx:id="btnReload" layoutX="176.0" layoutY="637.0" onAction="#reloadOnAction" prefHeight="25.0" prefWidth="516.0" style="-fx-background-color: White; -fx-border-color: Black; -fx-background-radius: 10; -fx-border-radius: 10;" text="Reload Table">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnGenarat" layoutX="730.0" layoutY="626.0" onAction="#genReportOnAction" prefHeight="38.0" prefWidth="170.0" style="-fx-background-color: Black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 2.5px; -fx-border-color: White; -fx-cursor: hand;" text="Ganerate Quata">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.008256880733944968">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                  </JFXButton>
+               </children></Pane>
+            <Pane fx:id="showingPane" layoutX="8.0" layoutY="61.0" opacity="0.8" prefHeight="142.0" prefWidth="890.0" style="-fx-background-color: #bdc3c7; -fx-background-radius: 15; -fx-border-radius: 15;">
+               <children>
+                  <JFXButton fx:id="btnSearch" layoutX="385.0" layoutY="14.0" onAction="#seacrOnAction" prefHeight="38.0" prefWidth="216.0" style="-fx-background-color: Black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 2.5px; -fx-border-color: White; -fx-cursor: hand;" text="Search">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.01146788990825688">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                  </JFXButton>
+                  <Label fx:id="lblQty" layoutX="541.0" layoutY="83.0" prefHeight="27.0" prefWidth="88.0" text="Qty">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtQty" layoutX="653.0" layoutY="82.0" prefHeight="27.0" prefWidth="118.0" promptText="Quantity">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField fx:id="txtProjectId" layoutX="647.0" layoutY="18.0" opacity="0.74" prefHeight="27.0" prefWidth="170.0" promptText="PROJ _ _ _" style="-fx-background-color: #ecf0f1;">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <Label fx:id="lblProjectIdMachineShow" layoutX="120.0" layoutY="24.0" prefHeight="27.0" prefWidth="216.0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+            <Label fx:id="lblProjectId" layoutX="26.0" layoutY="80.0" prefHeight="27.0" prefWidth="73.0" text="Project Id">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblMachineId" layoutX="26.0" layoutY="141.0" prefHeight="27.0" prefWidth="88.0" text="Machine Id">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtMachineId" layoutX="138.0" layoutY="140.0" prefHeight="27.0" prefWidth="216.0" promptText="MACH _ _ _">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></JFXTextField>
+            <TableView fx:id="tblMachineProjectForm" layoutX="108.0" layoutY="225.0" onMouseClicked="#selectTableClicked" prefHeight="291.0" prefWidth="646.0">
+              <columns>
+                <TableColumn fx:id="clmProjectId" prefWidth="209.60000610351562" text="Project Id" />
+                <TableColumn fx:id="clmMachineId" prefWidth="239.19998168945312" text="Machine Id" />
+                  <TableColumn fx:id="clmQty" prefWidth="196.800048828125" text="Qty" />
+              </columns>
+            </TableView>
+            <JFXButton fx:id="btnSave" layoutX="677.0" layoutY="547.0" onAction="#saveOnAction" prefHeight="38.0" prefWidth="216.0" style="-fx-background-color: Black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 2.5px; -fx-border-color: White; -fx-cursor: hand;" text="Save Machine">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.008256880733944968">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+            <JFXButton fx:id="btnDeleteDetails" layoutX="26.0" layoutY="547.0" onAction="#deleteDetailsOnAction" prefHeight="38.0" prefWidth="216.0" style="-fx-background-color: Black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 2.5px; -fx-border-color: White; -fx-cursor: hand;" text="Delete Details">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.02064220183486219">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+            <JFXButton fx:id="btnUpdate" layoutX="336.0" layoutY="547.0" onAction="#updateOnAction" prefHeight="38.0" prefWidth="216.0" style="-fx-background-color: Black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-width: 2.5px; -fx-border-color: White; -fx-cursor: hand;" text="Update">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.1">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Label fx:id="lblMachineProjectForm" alignment="CENTER" layoutX="8.0" layoutY="6.0" prefHeight="38.0" prefWidth="890.0" style="-fx-background-color: White; -fx-border-color: Blue;" text="Machine &amp; Project Details Form" textFill="#00ff40">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

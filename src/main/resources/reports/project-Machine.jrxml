@@ -1,0 +1,122 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="project-Machine" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7062e569-eece-4b27-a210-7118af218932">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Project-Machine-Details"/>
+	<parameter name="todayDate" class="java.lang.String"/>
+	<query language="SQL"><![CDATA[SELECT * FROM machine]]></query>
+	<field name="MachineID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MachineID"/>
+		<property name="com.jaspersoft.studio.field.label" value="MachineID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="machine"/>
+	</field>
+	<field name="Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="machine"/>
+	</field>
+	<field name="Availability" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="Availability"/>
+		<property name="com.jaspersoft.studio.field.label" value="Availability"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="machine"/>
+	</field>
+	<field name="Status" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Status"/>
+		<property name="com.jaspersoft.studio.field.label" value="Status"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="machine"/>
+	</field>
+	<field name="QtyOnHand" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="QtyOnHand"/>
+		<property name="com.jaspersoft.studio.field.label" value="QtyOnHand"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="machine"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="staticText" uuid="6799d25c-a68b-400d-b89c-e58e06010889" x="-21" y="0" width="595" height="59" fontSize="24.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Machine Details]]></text>
+		</element>
+	</title>
+	<pageHeader height="35" splitType="Stretch"/>
+	<columnHeader height="61" splitType="Stretch">
+		<element kind="staticText" uuid="2339b904-935e-4661-aaa6-bb5ea9ec4a1a" x="0" y="0" width="111" height="30" fontSize="14.0" hTextAlign="Center">
+			<text><![CDATA[MachineID]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d1d5fccd-5352-4632-9a3b-35de1c6c7feb"/>
+			<box>
+				<pen lineWidth="1.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="af3601e7-2d52-4e47-a8f4-2e864d1e62b4" x="111" y="0" width="111" height="30" fontSize="14.0" hTextAlign="Center">
+			<text><![CDATA[Name]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ee1e0e34-d31a-4577-a199-24dd53ce2a80"/>
+			<box>
+				<pen lineWidth="1.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="50c78098-dbbe-46d5-ab9b-fcbc2de23254" x="222" y="0" width="111" height="30" fontSize="14.0" hTextAlign="Center">
+			<text><![CDATA[Availability]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8c32540f-8603-43d0-90fc-ab6a917624f6"/>
+			<box>
+				<pen lineWidth="1.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="86eb44d1-3776-4ec1-b7b7-3e4fde5b621a" x="333" y="0" width="111" height="30" fontSize="14.0" hTextAlign="Center">
+			<text><![CDATA[Status]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8ef1365e-dba3-4ae3-b508-0bdb64c4337e"/>
+			<box>
+				<pen lineWidth="1.25"/>
+			</box>
+		</element>
+		<element kind="staticText" uuid="59bb8f92-8c6a-4018-90de-7bb16cd1b5d2" x="444" y="0" width="111" height="30" fontSize="14.0" hTextAlign="Center">
+			<text><![CDATA[QtyOnHand]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8a6985ad-e153-49b2-9181-9e547d33e932"/>
+			<box>
+				<pen lineWidth="1.25"/>
+			</box>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<element kind="textField" uuid="8b0890ec-a45d-4882-ab18-fd4cd3587478" x="0" y="0" width="111" height="30" fontSize="12.0" italic="true" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{MachineID}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d1d5fccd-5352-4632-9a3b-35de1c6c7feb"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="af2105ad-a814-42e0-914d-2224a7d0c2b8" x="111" y="0" width="111" height="30" fontSize="12.0" italic="true" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{Name}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ee1e0e34-d31a-4577-a199-24dd53ce2a80"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="34b44e75-638d-4eed-818e-adb5658fdd81" x="222" y="0" width="111" height="30" fontSize="12.0" italic="true" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{Availability}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8c32540f-8603-43d0-90fc-ab6a917624f6"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="66efda84-328f-4a21-9355-5994ea374c47" x="333" y="0" width="111" height="30" fontSize="12.0" italic="true" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{Status}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8ef1365e-dba3-4ae3-b508-0bdb64c4337e"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="6caf3c50-54cf-4d17-900f-1055ba2ba0b9" x="444" y="0" width="111" height="30" fontSize="12.0" italic="true" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{QtyOnHand}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8a6985ad-e153-49b2-9181-9e547d33e932"/>
+				<box>
+					<pen lineWidth="0.75"/>
+				</box>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch">
+		<element kind="textField" uuid="3a5043ee-0fd2-4546-9fc7-bf52af1e74af" x="460" y="7" width="100" height="30" fontSize="12.0" italic="true" hTextAlign="Center" vTextAlign="Middle">
+			<expression><![CDATA[$P{todayDate}]]></expression>
+		</element>
+	</columnFooter>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>

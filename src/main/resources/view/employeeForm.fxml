@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="employeeAnchorPane" prefHeight="702.0" prefWidth="911.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ijse.apexbuildingsolution.apex_building_solution.Controller.EmployeeFormController">
+   <children>
+      <Pane fx:id="employeePane" prefHeight="702.0" prefWidth="911.0">
+         <children>
+            <ImageView fx:id="imgEmployee" fitHeight="702.0" fitWidth="911.0" opacity="0.68" pickOnBounds="true">
+               <image>
+                  <Image url="@../Pictures/EmployeeForm.jpg" />
+               </image>
+            </ImageView>
+            <Pane layoutY="8.0" opacity="0.49" prefHeight="694.0" prefWidth="911.0" style="-fx-background-color: radial-gradient(focus-angle 0.0deg, focus-distance 0.0% , center 47.3451% 50.0%, radius 61.6972%, #1187cc 0.0%, #ffffff 100.0%);">
+               <children>
+                  <Pane layoutX="15.0" layoutY="52.0" prefHeight="130.0" prefWidth="886.0" style="-fx-background-color: White; -fx-background-radius: 20;">
+                     <children>
+                        <Label fx:id="lblEmplooyeeIdShow" layoutX="124.0" layoutY="20.0" prefHeight="29.0" prefWidth="218.0">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <JFXButton fx:id="btnReFill" layoutX="759.0" layoutY="630.0" onAction="#reFillOnAction" prefHeight="34.0" prefWidth="138.0" style="-fx-background-color: Black; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 1.5px; -fx-border-color: White; -fx-cursor: hand;" text="Re Fill">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.47345135275241546" centerY="0.5" radius="0.01">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.060584794729948044" green="0.06221442669630051" blue="0.06315789371728897" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                  </JFXButton>
+               </children>
+            </Pane>
+            <TableView fx:id="tblEmployeeForm" layoutX="6.0" layoutY="198.0" onMouseClicked="#selectTableClicked" prefHeight="230.0" prefWidth="900.0">
+              <columns>
+                <TableColumn fx:id="clmEmployeeId" prefWidth="112.80001831054688" text="Employee Id" />
+                <TableColumn fx:id="clmEmployeeName" prefWidth="159.19998168945312" text="Employee Name'" />
+                  <TableColumn fx:id="clmRole" prefWidth="141.5999755859375" text="Role" />
+                  <TableColumn fx:id="clmAddress" prefWidth="145.59991455078125" text="Address" />
+                  <TableColumn fx:id="clmSalary" prefWidth="108.800048828125" text="Salary" />
+                  <TableColumn fx:id="clmContactNumber" prefWidth="143.20001220703125" text="Contact Number" />
+                  <TableColumn fx:id="clmAttendence" prefWidth="85.5999755859375" text="Attendence" />
+              </columns>
+            </TableView>
+            <Label fx:id="lblEmployeeId" layoutX="22.0" layoutY="80.0" prefHeight="29.0" prefWidth="96.0" text="Employee Id">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtEmployeeId" layoutX="647.0" layoutY="148.0" opacity="0.72" prefHeight="29.0" prefWidth="183.0" promptText="Emp_ _ _" style="-fx-background-color: #ecf0f1;">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></JFXTextField>
+            <Label fx:id="lblEmployeeName" layoutX="397.0" layoutY="81.0" prefHeight="29.0" prefWidth="128.0" text="Employee Name">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtEmployeeName" layoutX="532.0" layoutY="78.0" prefHeight="29.0" prefWidth="365.0" promptText="Employee Name">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></JFXTextField>
+            <Label fx:id="lblRole" layoutX="22.0" layoutY="135.0" prefHeight="29.0" prefWidth="96.0" text="Role">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtRole" layoutX="156.0" layoutY="133.0" prefHeight="29.0" prefWidth="183.0" promptText="Role">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </JFXTextField>
+            <Pane fx:id="showingDownPane" layoutX="9.0" layoutY="446.0" opacity="0.68" prefHeight="218.0" prefWidth="486.0" style="-fx-background-color: #bdc3c7; -fx-background-radius: 15; -fx-border-radius: 15;" />
+            <Label fx:id="lblEmployeeAddress" layoutX="22.0" layoutY="463.0" prefHeight="29.0" prefWidth="138.0" text="Employee Address">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtEmployeeAddress" layoutX="170.0" layoutY="463.0" prefHeight="29.0" prefWidth="278.0" promptText="58/2 Digala , Elpitiya.">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></JFXTextField>
+            <Label fx:id="lblSalary" layoutX="22.0" layoutY="510.0" prefHeight="29.0" prefWidth="138.0" text="Salary">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtSalary" layoutX="170.0" layoutY="510.0" prefHeight="29.0" prefWidth="278.0" promptText="1000 _ _ _ _ _">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></JFXTextField>
+            <Label fx:id="lblContactNumber" layoutX="22.0" layoutY="565.0" prefHeight="29.0" prefWidth="138.0" text="Contact Number">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtContactNumber" layoutX="170.0" layoutY="565.0" prefHeight="29.0" prefWidth="278.0" promptText="0 7 _ - _ _ _ _ _ _ _">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></JFXTextField>
+            <Label fx:id="lblAttendents" layoutX="22.0" layoutY="611.0" prefHeight="29.0" prefWidth="138.0" text="Attendenace">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtAttendence" layoutX="170.0" layoutY="611.0" prefHeight="29.0" prefWidth="278.0" promptText="_ _ _ %" unFocusColor="#1e1b1b">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></JFXTextField>
+            <JFXButton fx:id="btnSearchEmployee" layoutX="399.0" layoutY="147.0" onAction="#searchOnAction" prefHeight="29.0" prefWidth="192.0" style="-fx-background-color: Black; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 1.5px; -fx-border-color: White; -fx-cursor: hand;" text="Search Employee">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.47345135275241546" centerY="0.5" radius="0.01">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+            <JFXButton fx:id="btnDeleteEmployee" layoutX="576.0" layoutY="460.0" onAction="#deleteOnAction" prefHeight="29.0" prefWidth="192.0" style="-fx-background-color: Black; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 1.5px; -fx-border-color: White; -fx-cursor: hand;" text="Delete Employee">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.47345135275241546" centerY="0.5" radius="0.01">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+            <JFXButton fx:id="btnUpdateEmployee" layoutX="576.0" layoutY="522.0" onAction="#updateOnAction" prefHeight="29.0" prefWidth="192.0" style="-fx-background-color: Black; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 1.5px; -fx-border-color: White; -fx-cursor: hand;" text="Update Employee">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.47345135275241546" centerY="0.5" radius="0.01">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+            <JFXButton fx:id="btnSaveEmployee" layoutX="576.0" layoutY="580.0" onAction="#saveOnAction" prefHeight="29.0" prefWidth="192.0" style="-fx-background-color: Black; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 1.5px; -fx-border-color: White; -fx-cursor: hand;" text="Save Employee">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.47345135275241546" centerY="0.5" radius="0.01">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.060584794729948044" green="0.06221442669630051" blue="0.06315789371728897" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Label fx:id="lblCustomerForm" alignment="CENTER" layoutX="14.0" layoutY="5.0" prefHeight="38.0" prefWidth="886.0" style="-fx-background-color: White; -fx-border-color: Blue;" text="Employee Form" textFill="#00ff22">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

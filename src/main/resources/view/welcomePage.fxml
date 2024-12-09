@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="welcomeAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="317.0" prefWidth="704.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ijse.apexbuildingsolution.apex_building_solution.Controller.WelcomePageController">
+   <children>
+      <ImageView fx:id="welcomeImgView" fitHeight="317.0" fitWidth="704.0" opacity="0.75" pickOnBounds="true">
+         <image>
+            <Image url="@../Pictures/WelcomePage.jpg" />
+         </image>
+      </ImageView>
+      <Pane opacity="0.52" prefHeight="318.0" prefWidth="704.0" style="-fx-background-color: linear-gradient(from 42.803% 97.3485% to 100.0% 100.0%, #000000 0.0%, #ffffff 100.0%);" />
+      <Pane layoutX="-1.0" opacity="0.59" prefHeight="318.0" prefWidth="706.0" style="-fx-background-color: linear-gradient(from 12.1212% 2.2727% to 100.0% 85.9848%, #dfcfcf 0.0%, #ffffff 26.3845%, #5e00ff 100.0%);">
+         <children>
+            <Label fx:id="lblVersion" layoutX="612.0" layoutY="293.0" prefHeight="18.0" prefWidth="55.0" text="Version 1.0" textFill="#8e1616">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblLoading" layoutX="269.0" layoutY="268.0" prefHeight="20.0" prefWidth="68.0" text="Loading...">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPercentage" layoutX="348.0" layoutY="267.0" prefHeight="18.0" prefWidth="45.0" text="2%">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Rectangle fx:id="rctMain" arcHeight="5.0" arcWidth="5.0" fill="#b2b9bfc4" height="12.0" layoutX="112.0" layoutY="291.0" stroke="BLACK" strokeType="INSIDE" width="479.0" />
+      <Rectangle fx:id="rctSub" arcHeight="5.0" arcWidth="5.0" fill="#1f18e7" height="12.0" layoutX="112.0" layoutY="291.0" stroke="BLACK" strokeType="INSIDE" width="20.0" />
+      <Label fx:id="lblWelcomeHead" alignment="CENTER" layoutX="99.0" layoutY="22.0" opacity="0.71" prefHeight="27.0" prefWidth="490.0" style="-fx-background-color: #ecf0f1;" text="Welcome To The Apex Construnctions..." textFill="#09a927">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

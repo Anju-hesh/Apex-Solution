@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="projectAnchorPane" prefHeight="702.0" prefWidth="911.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ijse.apexbuildingsolution.apex_building_solution.Controller.ProjectFormController">
+   <children>
+      <Pane fx:id="projectPane" prefHeight="702.0" prefWidth="911.0">
+         <children>
+            <ImageView fx:id="imgProjectForm" fitHeight="702.0" fitWidth="911.0" opacity="0.68" pickOnBounds="true">
+               <image>
+                  <Image url="@../Pictures/ProjectForm.jpg" />
+               </image>
+            </ImageView>
+            <Pane opacity="0.59" prefHeight="702.0" prefWidth="911.0" style="-fx-background-color: radial-gradient(focus-angle 0.0deg, focus-distance 0.0% , center 50.0% 50.0%, radius 82.7982%, #ffffff 0.0%, #22ff00 100.0%);">
+               <children>
+                  <JFXButton fx:id="btnGenarat" layoutX="627.0" layoutY="396.0" onAction="#genaratOnAction" prefHeight="38.0" prefWidth="230.0" style="-fx-background-color: radial-gradient(focus-angle 0.0deg, focus-distance 0.0% , center 50.0% 50.0%, radius 100.0%, #000000 0.0%, #ffffff 100.0%); -fx-border-width: 1.5px; -fx-border-color: White; -fx-background-radius: 15; -fx-border-radius: 15; -fx-cursor: hand;" text="Genarate Cotation" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="brnReFill" layoutX="408.0" layoutY="381.0" onAction="#reFillOnAction" prefHeight="34.0" prefWidth="155.0" style="-fx-background-color: Black; -fx-border-width: 1.5px; -fx-border-color: White; -fx-background-radius: 15; -fx-border-radius: 15; -fx-cursor: hand;" text="Re Fill">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.07568807339449535">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                  </JFXButton>
+               </children></Pane>
+            <Pane fx:id="showingPane" layoutX="10.0" layoutY="60.0" opacity="0.81" prefHeight="265.0" prefWidth="886.0" style="-fx-background-color: #bdc3c7; -fx-background-radius: 30; -fx-border-radius: 30;">
+               <children>
+                  <JFXButton fx:id="btnAddNewCustomer" layoutX="838.0" layoutY="67.0" onAction="#addNewCustomerOnAction" prefHeight="25.0" prefWidth="34.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: black; -fx-border-width: 1;" text="+">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnSearchProject" layoutX="517.0" layoutY="14.0" onAction="#searchProjectOnAction" prefHeight="34.0" prefWidth="155.0" style="-fx-background-color: Black; -fx-border-width: 1.5px; -fx-border-color: White; -fx-background-radius: 15; -fx-border-radius: 15; -fx-cursor: hand;" text="Search Project">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.07568807339449535">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                  </JFXButton>
+                  <JFXTextField fx:id="txtProjectId" layoutX="702.0" layoutY="16.0" opacity="0.72" prefHeight="31.0" prefWidth="180.0" promptText="      PROJ _ _ _" style="-fx-background-color: #ecf0f1;">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <Label fx:id="lblProjectIdShow" layoutX="120.0" layoutY="13.0" prefHeight="31.0" prefWidth="214.0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblStartDateNow" layoutX="98.0" layoutY="165.0" prefHeight="31.0" prefWidth="260.0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblUserIdShow" layoutX="595.0" layoutY="212.0" prefHeight="31.0" prefWidth="230.0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children></Pane>
+            <Label fx:id="lblProjectId" layoutX="14.0" layoutY="83.0" text="Project Id">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblProjectName" layoutX="14.0" layoutY="134.0" text="Project Name">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtProjectName" layoutX="131.0" layoutY="126.0" prefHeight="31.0" prefWidth="342.0" promptText="      Project Name">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></JFXTextField>
+            <Label fx:id="lblCustomerId" layoutX="495.0" layoutY="137.0" text="Customer Id">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtCustomerId" layoutX="612.0" layoutY="129.0" prefHeight="31.0" prefWidth="230.0" promptText="         CUST _ _ _" visible="false">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></JFXTextField>
+            <Label fx:id="lblDescription" layoutX="14.0" layoutY="182.0" text="Project Description">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtDescription" layoutX="177.0" layoutY="174.0" prefHeight="31.0" prefWidth="686.0" promptText="           Desc . . . . . . . ">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></JFXTextField>
+            <Label fx:id="lblStartDate" layoutX="14.0" layoutY="229.0" text="Start Date">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblEndtDate" layoutX="495.0" layoutY="232.0" text="End Date">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtEndtDate" layoutX="612.0" layoutY="224.0" prefHeight="31.0" prefWidth="230.0" promptText="20 _ _ / _ _ / _ _ ">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></JFXTextField>
+            <Label fx:id="lblUserId" layoutX="495.0" layoutY="281.0" text="User Id">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tblProjectForm" layoutX="4.0" layoutY="453.0" onMouseClicked="#selectTableClicked" prefHeight="245.0" prefWidth="904.0">
+              <columns>
+                <TableColumn fx:id="clmProjectId" prefWidth="87.20001220703125" text="Project Id" />
+                <TableColumn fx:id="clmName" prefWidth="81.60000610351562" text="Name" />
+                  <TableColumn fx:id="clmDescription" prefWidth="198.39996337890625" text="Description" />
+                  <TableColumn fx:id="clmCustomerId" prefWidth="108.800048828125" text="Customer - Id" />
+                  <TableColumn fx:id="clmStartDate" prefWidth="138.4000244140625" text="Start - Date" />
+                  <TableColumn fx:id="clmEndDate" prefWidth="135.99993896484375" text="End - Date" />
+                  <TableColumn fx:id="clmUserId" prefWidth="151.199951171875" text="User - Id" />
+              </columns>
+            </TableView>
+            <JFXButton fx:id="btnDeleteProject" layoutX="14.0" layoutY="351.0" onAction="#deleteProjectOnAction" prefHeight="25.0" prefWidth="295.0" style="-fx-background-color: Black; -fx-border-width: 1.5px; -fx-border-color: White; -fx-background-radius: 15; -fx-border-radius: 15; -fx-cursor: hand;" text="Delete Project">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.13990823282014309">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+            <JFXButton fx:id="btnUpdateProject" layoutX="14.0" layoutY="407.0" onAction="#updateProjectOnAction" prefHeight="25.0" prefWidth="295.0" style="-fx-background-color: Black; -fx-border-width: 1.5px; -fx-border-color: White; -fx-background-radius: 15; -fx-border-radius: 15; -fx-cursor: hand;" text="Update Project">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.08486238094644771">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+            <JFXButton fx:id="btnSaveProject" layoutX="600.0" layoutY="351.0" onAction="#saveProjectOnAction" prefHeight="25.0" prefWidth="295.0" style="-fx-background-color: Black; -fx-border-width: 1.5px; -fx-border-color: White; -fx-background-radius: 15; -fx-border-radius: 15; -fx-cursor: hand;" text="Add Project">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" focusDistance="-0.018348606354599672" radius="0.09403669724770629">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+            </JFXButton>
+            <ComboBox fx:id="cmbCustId" layoutX="612.0" layoutY="129.0" onAction="#custIdOnAction" prefHeight="31.0" prefWidth="230.0" />
+         </children>
+      </Pane>
+      <Label fx:id="lblProjectForm" alignment="CENTER" layoutX="8.0" layoutY="7.0" prefHeight="38.0" prefWidth="885.0" style="-fx-background-color: White; -fx-border-color: Blue;" text="Project Form" textFill="#00ff2b">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
