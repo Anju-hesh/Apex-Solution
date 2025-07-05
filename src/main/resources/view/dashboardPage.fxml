@@ -14,6 +14,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.chart.PieChart?>
 <AnchorPane fx:id="dashboardMainAnchorPane" prefHeight="844.0" prefWidth="1518.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ijse.apexbuildingsolution.apex_building_solution.Controller.DashboardPageController">
    <children>
       <VBox fx:id="mainVBox" alignment="TOP_CENTER" opacity="0.8" prefHeight="844.0" prefWidth="419.0" spacing="10.0" style="-fx-background-color: F6F7C4;">
@@ -138,10 +139,12 @@
             <Pane fx:id="colorPane" opacity="0.86" prefHeight="842.0" prefWidth="1100.0" style="-fx-background-color: white;">
                <children>
                   <ImageView fx:id="imgViewDiagram" fitHeight="842.0" fitWidth="1100.0" pickOnBounds="true">
-                     <image>
-                        <Image url="@../Pictures/dashboardDiagram.png" />
-                     </image>
+<!--                     <image>-->
+<!--                        <Image url="@../Pictures/dashboardDiagram.png" />-->
+<!--                     </image>-->
                   </ImageView>
+                  <PieChart fx:id="pieChartMachineStatus" layoutX="700.0" layoutY="500.0" prefHeight="250.0" prefWidth="350.0" title="Machine Repair Status" />
+
                   <Pane fx:id="landingPane" layoutX="106.0" layoutY="104.0" opacity="0.78" prefHeight="702.0" prefWidth="911.0" />
                   <JFXButton fx:id="btnBackToDashBoard" layoutX="59.0" layoutY="14.0" onAction="#backToDashBoardOnAction" prefHeight="38.0" prefWidth="230.0" style="-fx-background-color: Black; -fx-border-color: Blue; -fx-border-width: 2px;" text="Back To DashBoard" textFill="WHITE">
                      <font>

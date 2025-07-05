@@ -25,6 +25,11 @@ public class MachineFormModel {
         }
         return "MACH001";
     }
+
+    public int getMachineCount() throws SQLException {
+        return getAllMachinne().size(); // Count = size of the list
+    }
+
     public ArrayList<MachineDto> getAllMachinne() throws SQLException {
         ResultSet rst = CrudUtil.execute("SELECT * FROM machine");
         ArrayList<MachineDto> machineDtos = new ArrayList<>();

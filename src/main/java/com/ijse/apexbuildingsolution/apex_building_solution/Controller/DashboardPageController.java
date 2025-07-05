@@ -1,12 +1,16 @@
 package com.ijse.apexbuildingsolution.apex_building_solution.Controller;
 
+import com.ijse.apexbuildingsolution.apex_building_solution.model.MachineFormModel;
+import com.ijse.apexbuildingsolution.apex_building_solution.model.RepairFormModel;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -19,6 +23,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.sql.Time;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -91,46 +96,84 @@ public class  DashboardPageController {
     @FXML
     private TextField txtSearch;
 
+    @FXML
+    private PieChart pieChartMachineStatus;
+
+    private final MachineFormModel machineService = new MachineFormModel();
+    private final RepairFormModel repairService = new RepairFormModel();
+
     public void initialize() {
         btnBackToDashBoard.setVisible(false);
         changeFocusText();
         lblDate.setText(LocalTime.now().format(DateTimeFormatter.ofPattern("hh:mm:ss")));
+        try {
+            setUpPieChart();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void setUpPieChart() throws SQLException {
+        int totalMachines = machineService.getMachineCount();   // <- new method
+        int repairMachines = repairService.getRepairCount();    // <- from above
+        int otherMachines = totalMachines - repairMachines;
+
+        if (totalMachines <= 0) {
+            pieChartMachineStatus.setData(FXCollections.observableArrayList(
+                    new PieChart.Data("No Data", 1)
+            ));
+        } else {
+            pieChartMachineStatus.setData(FXCollections.observableArrayList(
+                    new PieChart.Data("Repair", repairMachines),
+                    new PieChart.Data("Other", otherMachines)
+            ));
+        }
+
+        pieChartMachineStatus.setLabelsVisible(true);
+        pieChartMachineStatus.setLegendVisible(true);
+        pieChartMachineStatus.setStartAngle(90);
     }
 
     @FXML
     void customerOnAction(ActionEvent event) {
 
         landingOnAction("/view/customerForm.fxml");
+        pieChartMachineStatus.setVisible(false);
     }
 
     @FXML
     void employeeOnAction(ActionEvent event) {
 
         landingOnAction("/view/employeeForm.fxml");
+        pieChartMachineStatus.setVisible(false);
     }
 
     @FXML
     void machineOnAction(ActionEvent event) {
 
         landingOnAction(("/view/machineForm.fxml"));
+        pieChartMachineStatus.setVisible(false);
     }
 
     @FXML
     void machineProjectOnAction(ActionEvent event) {
 
         landingOnAction(("/view/machine_&_projectForm.fxml"));
+        pieChartMachineStatus.setVisible(false);
     }
 
     @FXML
     void materialsOnAction(ActionEvent event) {
 
         landingOnAction(("/view/materialsForm.fxml"));
+        pieChartMachineStatus.setVisible(false);
     }
 
     @FXML
     void paymentOnAction(ActionEvent event) {
 
         landingOnAction(("/view/paymentForm.fxml"));
+        pieChartMachineStatus.setVisible(false);
     }
 
     @FXML
@@ -140,30 +183,35 @@ public class  DashboardPageController {
     void projectMaterialsOnAction(ActionEvent event) {
 
         landingOnAction(("/view/project_&_MaterialsForm.fxml"));
+        pieChartMachineStatus.setVisible(false);
     }
 
     @FXML
     void projectOnAction(ActionEvent event) {
 
         landingOnAction(("/view/projectForm.fxml"));
+        pieChartMachineStatus.setVisible(false);
     }
 
     @FXML
     void repairOnAction(ActionEvent event) {
 
         landingOnAction(("/view/repairForm.fxml"));
+        pieChartMachineStatus.setVisible(false);
     }
 
     @FXML
     void supplierOnAction(ActionEvent event) {
 
         landingOnAction(("/view/supplierForm.fxml"));
+        pieChartMachineStatus.setVisible(false);
     }
 
     @FXML
     void userOnAction(ActionEvent event) {
 
         landingOnAction("/view/userForm.fxml");
+        pieChartMachineStatus.setVisible(false);
     }
 
     @FXML
@@ -212,6 +260,7 @@ public class  DashboardPageController {
         landingPane.getChildren().clear();
         imgViewDiagram.setVisible(true);
         btnBackToDashBoard.setVisible(false);
+        pieChartMachineStatus.setVisible(true);
     }
 
     public void backToLoginClickOnAction(MouseEvent mouseEvent) {

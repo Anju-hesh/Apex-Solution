@@ -45,6 +45,10 @@ public class RepairFormModel {
         return repairDtos;
     }
 
+    public int getRepairCount() throws SQLException {
+        return getAllRepairs().size(); // repair list size = repair count
+    }
+
     public boolean saveRepair(RepairDto repairDto) throws SQLException {
         String sql = "INSERT INTO repair (RepairID, MachineID, Qty) VALUES (?, ?, ?) ";
         return CrudUtil.execute(sql, repairDto.getRepairId(), repairDto.getMachineId(), repairDto.getQty());
